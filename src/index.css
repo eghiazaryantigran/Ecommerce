@@ -1,13 +1,289 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Martian+Mono:wght@300;600&family=Unbounded&display=swap');
+
+*{
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+header{
+  position: relative;
+}
+
+body{
+  background: #dadada;
+  color: #000000;
+  font-family: 'Martian Mono', monospace;
+  font-weight: 300;
+}
+
+.wrapper{
+  max-width: 1280px;
+  margin: 50px auto;
+}
+
+header .logo{
+font-weight: 600;
+  font-size: 25px;
+}
+header ul.nav{
+
+float: right;
+  list-style: none;
+
+}
+header ul.nav li{
+
+display: inline;
+  margin-left: 25px;
+  cursor:pointer;
+  transition: opacity 500ms ease;
+
+}
+header ul.nav li:hover{
+
+opacity: 0.7;
+
+}
+
+header .shop_cart_button{
+  float: right;
+  cursor: pointer;
+  transition: color,transform 500ms ease;
+}
+
+ .empty h1{
+ font-size: 20px;
+  margin-bottom: 20px;
+}
+
+
+header .shop_cart_button:hover,
+header .shop_cart_button.active
+{
+color: #ff004d;
+transform: scale(1.5)
+}
+
+
+header .shop_cart{
+  position: absolute;
+  top:30px;
+  right: 0;
+  width: 450px;
+  min-height: 100px;
+  background: #fafafa;
+  -webkit-box-shadow: 2px 5px 9px 5px rgba(0,0,0,0.56);
+  box-shadow: 2px 5px 9px 5px rgba(0,0,0,0.56);
+  z-index: 999;
+  padding: 20px;
+  padding-bottom:0;
+}
+
+
+header .presentation{
+  margin:50px 0;
+  background: url("./images/4.jpg");
+  max-width: 100%;
+  height: 500px;
+  background-size: cover;
+  background-position: center center;   /*vuycha a tali nkari mejtexov*/
+  background-blend-mode: multiply;/*nkarin karananaq guyn tanq*/
+  background-color: #0077ff91;
+  position: relative;
+
+}
+
+header .presentation:after{
+  content:"Ամենա լավ տեսականին ձեր տան համար";
+  position: absolute;
+  top: 100px;
+  left: 50px ;
+  width: 300px;
+  font-size: 40px;
+  font-weight: 600;
+  color: #fff;
+}
+
+header .presentation:before{
+  content:"Մատչելի գներով";
+  position: absolute;
+  top: 250px;
+  left: 50px ;
+  width: 300px;
+  font-size: 20px;
+  font-weight: 300;
+  color: #fff;
+}
+
+footer{
+  text-align: center;
+  margin-top: 100px ;
+}
+
+.categories{
+  text-align: center;
+}
+
+.categories div{
+  display: inline-block;
+  background: rgba(242, 242, 242, 0.62);
+  border-radius: 50px;
+  padding: 10px 20px;
+  margin-bottom: 25px;
+  margin-right: 15px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all 500ms ease;
+}
+
+.categories div:hover{
+ border-color:silver ;
+  transform:scale(1.1);
+}
+main {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+main .item {
+  width: 30%;
+  margin-bottom: 50px;
+  background: rgba(136, 136, 136, 0.09);
+  overflow: hidden;
+  position: relative;
+  padding-bottom: 20px;
+}
+
+main .item img,.full_item img {
+  width: 100%;
+  border-radius: 10px 10px 0 0;
+  transition:transform 500ms ease;
+  cursor: pointer;
+}
+
+main .item img:hover,.full_item img:hover {
+transform: scale(1.05);
+}
+
+main h2,.full_item h2
+main p,.full_item p
+main b,
+.full_item b{
+  margin:10px 20px ;
+  color:#444
+}
+
+main b,.full_item b{
+  color: #00a93b;
+}
+main .add_to_cart,
+.full_item .add_to_cart{
+position: absolute;
+  right: 20px;
+  bottom: 20px;
+  background: #ff004d;
+  width: 35px;
+  height: 35px;
+  text-align: center;
+  line-height: 35px;
+  color: #fff;
+  border-radius: 50%;
+  cursor: pointer;
+  font-weight: 600;
+  transition:transform 500ms ease;
+
+}
+
+main .add_to_cart:hover,
+.full_item .add_to_cart:hover{
+  transform: scale(1.5) translateY(-5px);
+
+}
+
+header .shop_cart .item{
+  width: 100%;
+  float: left;
+  margin-bottom: 20px;
+
+}
+
+header .shop_cart img{
+  width: 70px;
+  float: left;
+  margin-right: 20px;
+
+}
+header .shop_cart h2{
+ font-size: 20px;
+  margin-bottom: 10px;
+
+}
+
+
+header .shop_cart .amount {
+  float: left;
+  width: 100%;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+
+header .shop_cart b{
+ font-size: 20px;
+ font-weight:600;
+  color: #444444;
+
+}
+
+header .shop_cart .item .delete_icon{
+ color: #fd4d4d;
+  float: right;
+  position: relative;
+  top:-25px;
+  cursor: pointer;
+  transition: color,transform 500ms ease;
+
+}
+
+header .shop_cart .item .delete_icon:hover{
+  color: red;
+ transform: scale(1.5);
+
+}
+
+
+.full_item{
+position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;/*qashac ha linelu amboxh eji vra */
+  background: rgba(0, 0, 0, 0.68);
+  z-index: 99999;
+  overflow: auto;
+}
+
+.full_item>div{
+  width: 600px;
+  position: relative;
+  margin: 10% auto;
+  padding: 40px 30px;
+  background: #fff;
+  border-radius: 10px;
+}
+
+.full_item .close {
+  color: #fd4d4d;
+  float: right;
+  position: relative;
+  top:-25px;
+  cursor: pointer;
+  transition: color,transform 500ms ease;
+}
+
+.full_item .close:hover{
+  transform: scale(1.5);
+
 }
